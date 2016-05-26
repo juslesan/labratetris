@@ -51,4 +51,11 @@ public abstract class Palikka {
             
         }
     }
+    public String toString() {
+        String palikat = "";
+        for (Pala pala : palat) {
+            palikat += pala.toString();
+        }
+        return palikat;
+    }
 }

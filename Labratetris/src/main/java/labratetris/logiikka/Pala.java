@@ -7,8 +7,8 @@ public class Pala {
     private boolean pudonnut;
 
     public Pala(int x, int y) {
-        this.x = 3;
-        this.y = 0;
+        this.x = x;
+        this.y = y;
         this.pudonnut = false;
     }
 
@@ -21,7 +21,7 @@ public class Pala {
     }
 
     public void putoa() {
-        this.y--;
+        this.y++;
     }
 
     public void oikea() {
@@ -47,6 +47,6 @@ public class Pala {
 
     @Override
     public String toString() {
-        return "(" + this.x + "," + ")";
+        return "(" + this.x + "," + this.y + ")";
     }
 }

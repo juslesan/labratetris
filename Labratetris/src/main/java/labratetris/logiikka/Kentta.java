@@ -36,6 +36,15 @@ public class Kentta {
         return true;
     }
 
+    public boolean onkoRiviTaynna(int y) {
+        for (int i = 0; i < this.leveys; i++) {
+            if (onkoRuudussaPala(i, y) == false) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     public void tayta(int x, int y, Pala pala) {
         this.kentta[y][x] = pala;
     }
