@@ -7,5 +7,4 @@
 
 **Toiminnot:** pelaajat voivat valita eri pelimuotoja ja pelata niitä eri vaikeusasteilla. Voidaan myös selata huipputuloksia ja nollata ne haluttaessa.
 
-**Luokkakaavio**
-![Alt text](Luokkakaavio.jpg)
+**Luokkakaavio:** ![luokkakaavio](Luokkakaavio.png)
