@@ -19,7 +19,7 @@ public class J extends Palikka {
 
     @Override
     public void kaanna() {
-if (this.kulma == Kulma.OIKEA) {
+        if (this.kulma == Kulma.OIKEA) {
             this.palat.get(0).siirra(2, 0);
             this.palat.get(1).siirra(1, -1);
             this.palat.get(2).siirra(0, 0);
@@ -45,6 +45,7 @@ if (this.kulma == Kulma.OIKEA) {
             this.palat.get(1).siirra(-1, -1);
             this.palat.get(2).siirra(0, 0);
             this.palat.get(3).siirra(1, 1);
-        }    }
+        }
+    }
 
 }

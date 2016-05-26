@@ -48,9 +48,10 @@ public abstract class Palikka {
     public void jaadytaKentalle() {
         for (Pala pala : palat) {
             kentta.tayta(pala.getX(), pala.getY(), pala);
-            
+
         }
     }
+
     public String toString() {
         String palikat = "";
         for (Pala pala : palat) {

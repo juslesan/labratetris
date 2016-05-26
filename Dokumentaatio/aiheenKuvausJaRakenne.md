@@ -1,4 +1,4 @@
-# Aiheen kuvaus ja rakenne
+﻿# Aiheen kuvaus ja rakenne
 
 **Aihe:** tetris. Toteutetaan ohjelma, jonka toimintatarkoitus on olla tuttu tetrispeli. Pelissä on tarkoitus järjestää putoavia erimuotoisia palikoita siten, että ne muodostavat täysiä rivejä ja katoavat. Mikäli yhdellä kerralla saa poistettua useita rivejä, pelaaja saa enemmän pisteitä. Mikäli alue jolle palikat putoavat täyttyy vähintään yhdestä rivistä täyteen peli loppuu. Tarkoituksena olisi pitää tallella 5 parasta suoritusta pelin päätyttyä.
 	Kun peli etenee palikat putoavat nopeammin alas, ja täten myös yksittäisen poistetun rivin pistemäärä kasvaa. Tarkoituksena olisi voida valita eri vaikeusasteita, eli putoamisnopeuksia. Olisi myös mahdollista lisätä muutamia eri pelimuotoja, kuten kahden pelaajan samanaikainen vastakkain pelaaminen, tai pelimuoto jossa putoaa rivillinen ns. kiviä joiden tuhoaminen on vaikeaa. Nämä kaksi pelimuotoa voisi myös yhdistää mm. siten, että kun toinen pelaajista poistaa samanaikaisesti 4 riviä hän pudottaa rivin kiviä vastustajan kentälle.
@@ -6,3 +6,6 @@
 **Käyttäjät:** pelaaja (pelaaja2).
 
 **Toiminnot:** pelaajat voivat valita eri pelimuotoja ja pelata niitä eri vaikeusasteilla. Voidaan myös selata huipputuloksia ja nollata ne haluttaessa.
+
+**Luokkakaavio**
+![Alt text](Luokkakaavio.jpg)

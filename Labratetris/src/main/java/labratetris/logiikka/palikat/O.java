@@ -27,5 +27,4 @@ public class O extends Palikka {
     public void kaanna() {
     }
 
-    
 }

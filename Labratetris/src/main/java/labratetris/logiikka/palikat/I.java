@@ -17,7 +17,6 @@ public class I extends Palikka {
 
 //    public ArrayList<Pala> palat;
 //    public Enum kulma;
-
     public I(Kentta kentta) {
         super(kentta);
 //        this.kulma = Kulma.OIKEA;
@@ -78,5 +77,4 @@ public class I extends Palikka {
 //            pala.putoa();
 //        }
 //    }
-
 }

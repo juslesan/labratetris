@@ -10,5 +10,6 @@ package labratetris.logiikka.palikat;
  * @author juslesan
  */
 public enum Kulma {
+
     YLOS, ALAS, VASEN, OIKEA
 }

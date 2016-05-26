@@ -20,7 +20,7 @@ public class L extends Palikka {
         palat.add(new Pala(kentta.getLeveys() / 2 - 1, kentta.getKorkeus() - 2));
         palat.add(new Pala(kentta.getLeveys() / 2, kentta.getKorkeus() - 2));
         palat.add(new Pala(kentta.getLeveys() / 2, kentta.getKorkeus() - 1));
-        
+
     }
 
     @Override
