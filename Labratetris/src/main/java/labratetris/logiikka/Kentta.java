@@ -30,6 +30,9 @@ public class Kentta {
     }
 
     public boolean onkoRuudussaPala(int x, int y) {
+        if (y >= korkeus || x < 0 || x >= leveys) {
+            return true;
+        }
         if (this.kentta[y][x] == null) {
             return false;
         }

@@ -6,7 +6,6 @@
 package labratetris.logiikka.palikat;
 
 import labratetris.logiikka.Kentta;
-import labratetris.logiikka.palikat.O;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -18,20 +17,33 @@ import static org.junit.Assert.*;
  *
  * @author Santeri Juslenius
  */
-public class OTest {
+public class TTest {
 
     Kentta kentta;
-    O o;
+    T t;
 
     @Before
     public void setUp() {
         kentta = new Kentta(22, 10);
-        o = new O(kentta);
-    }
-    
-    @Test
-    public void KonstruktoriToimii() {
-        assertEquals("(4,1)(5,1)(4,2)(5,2)", o.toString());
+        t = new T(kentta);
     }
 
+    @Test
+    public void KonstruktoriToimii() {
+        assertEquals("(3,2)(4,2)(4,1)(5,2)", t.toString());
+    }
+
+    @Test
+    public void kaanna360() {
+        t.kaanna();
+        t.kaanna();
+        t.kaanna();
+        t.kaanna();
+        assertEquals("(3,2)(4,2)(4,1)(5,2)", t.toString());
+    }
+    // TODO add test methods here.
+    // The methods must be annotated with annotation @Test. For example:
+    //
+    // @Test
+    // public void hello() {}
 }

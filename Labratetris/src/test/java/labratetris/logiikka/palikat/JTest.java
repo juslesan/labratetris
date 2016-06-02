@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Palikka;
+package labratetris.logiikka.palikat;
 
+import labratetris.logiikka.Kentta;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -14,27 +15,31 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author juslesan
+ * @author Santeri Juslenius
  */
-public class PalikkaTest {
-    
-    public PalikkaTest() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
+public class JTest {
+
+    Kentta kentta;
+    J j;
+
     @Before
     public void setUp() {
+        kentta = new Kentta(22, 10);
+        j = new J(kentta);
     }
-    
-    @After
-    public void tearDown() {
+
+    @Test
+    public void KonstruktoriToimii() {
+        assertEquals("(3,1)(3,2)(4,2)(5,2)", j.toString());
+    }
+
+    @Test
+    public void kaanna360() {
+        j.kaanna();
+        j.kaanna();
+        j.kaanna();
+        j.kaanna();
+        assertEquals("(3,1)(3,2)(4,2)(5,2)", j.toString());
     }
 
     // TODO add test methods here.
