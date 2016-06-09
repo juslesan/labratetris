@@ -11,15 +11,15 @@ import labratetris.logiikka.Pala;
 /**
  *
  * @author juslesan
+ *
+ * Luokka on L muotoisen palikan pohja.
  */
 public class L extends Palikka {
 
     public L(Kentta kentta) {
         super(kentta);
-        super.palat.add(new Pala(kentta.getLeveys() / 2 - 2, 2));
-        super.palat.add(new Pala(kentta.getLeveys() / 2 - 1, 2));
-        super.palat.add(new Pala(kentta.getLeveys() / 2, 2));
-        super.palat.add(new Pala(kentta.getLeveys() / 2, 1));
+        super.vari = vari.ORANSSI;
+        aloitusPaikka();
 
     }
 
@@ -52,6 +52,15 @@ public class L extends Palikka {
         super.palat.get(1).siirra(0, 0);
         super.palat.get(2).siirra(1, 1);
         super.palat.get(3).siirra(2, 0);
-        super.kulma = Kulma.YLOS;
+        super.kulma = Kulma.OIKEA;
+    }
+
+    @Override
+    public void aloitusPaikka() {
+        palat.clear();
+        super.palat.add(new Pala(kentta.getLeveys() / 2 - 2, 2));
+        super.palat.add(new Pala(kentta.getLeveys() / 2 - 1, 2));
+        super.palat.add(new Pala(kentta.getLeveys() / 2, 2));
+        super.palat.add(new Pala(kentta.getLeveys() / 2, 1));
     }
 }

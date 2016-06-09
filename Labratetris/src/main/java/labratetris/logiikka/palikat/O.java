@@ -11,16 +11,15 @@ import labratetris.logiikka.Pala;
 /**
  *
  * @author juslesan
+ *
+ * Luokka on O muotoisen palikan pohja.
  */
 public class O extends Palikka {
 
     public O(Kentta kentta) {
         super(kentta);
-
-        palat.add(new Pala(kentta.getLeveys() / 2 - 1, 1));
-        palat.add(new Pala(kentta.getLeveys() / 2 - 0, 1));
-        palat.add(new Pala(kentta.getLeveys() / 2 - 1, 2));
-        palat.add(new Pala(kentta.getLeveys() / 2 - 0, 2));
+        super.vari = vari.KELTAINEN;
+        aloitusPaikka();
     }
 
     @Override
@@ -41,6 +40,15 @@ public class O extends Palikka {
 
     @Override
     public void kaannaOikea() {
+    }
+
+    @Override
+    public void aloitusPaikka() {
+        palat.clear();
+        palat.add(new Pala(kentta.getLeveys() / 2 - 1, 1));
+        palat.add(new Pala(kentta.getLeveys() / 2 - 0, 1));
+        palat.add(new Pala(kentta.getLeveys() / 2 - 1, 2));
+        palat.add(new Pala(kentta.getLeveys() / 2 - 0, 2));
     }
 
 }

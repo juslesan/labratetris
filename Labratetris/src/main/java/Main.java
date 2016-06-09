@@ -1,38 +1,23 @@
 
+import java.util.Random;
+import labratetris.gui.*;
 import labratetris.logiikka.Kentta;
 import labratetris.logiikka.Pala;
 import labratetris.logiikka.palikat.*;
+import labratetris.peli.Peli;
 
 public class Main {
 
     public static void main(String[] args) {
-        Kentta kentta = new Kentta(22, 10);
+//        Random random = new Random();
+//        for (int i = 0; i < 100; i++) {
+//            System.out.println(random.nextInt(7));
+//        }
+        Peli tetris = new Peli(22, 12, 2);
+        Kayttoliittyma kayttoliittyma = new Kayttoliittyma(tetris, 20);
+        kayttoliittyma.run();
 
-        tulostaKentta(kentta);
-        J j = new J(kentta);
-//        J j = new J(kentta);
-
-//        j.vasen();
-        j.kaanna();
-        j.kaanna();
-        j.kaanna();
-        j.kaanna();
-//        j.vasen();
-//        j.vasen();
-//        j.vasen();
-//        j.kaanna();
-//        j.vasen();
-//        j.kaanna();
-//        j.oikea();
-//        j.kaanna();
-//        l.kaanna();
-        j.jaadytaKentalle();
-        tulostaKentta(kentta);
-//        l.pudota();
-//        L l2 = new L(kentta);
-//        tulostaKentta(kentta);
-//        l2.pudota();
-//        tulostaKentta(kentta);
+        tetris.lisaaPaivitettava(kayttoliittyma.getPaivitettava());
     }
 
     public static void tulostaKentta(Kentta kentta) {

@@ -1,5 +1,13 @@
 package labratetris.logiikka;
 
+import labratetris.logiikka.palikat.Vari;
+
+/**
+ *
+ * @author juslesan
+ *
+ * Luokan tarkoituksena on toimia yksittäisiä paloja ylläpitävänä.
+ */
 public class Pala {
 
     private int y;
@@ -20,14 +28,23 @@ public class Pala {
         return y;
     }
 
+    /**
+     * Pudottaa yksittäistä palaa alaspäin ruudun verran.
+     */
     public void putoa() {
         this.y++;
     }
 
+    /**
+     * Siirtää yksittäistä palaa oikealle yhden ruudun verran.
+     */
     public void oikea() {
         this.x++;
     }
 
+    /**
+     * Siirtää yksittäistä palaa vasemmalle yhden ruudun verran.
+     */
     public void vasen() {
         this.x--;
     }
@@ -40,6 +57,12 @@ public class Pala {
         this.pudonnut = true;
     }
 
+    /**
+     * Siirtää palaa paramterien arvojen verran.
+     *
+     * @param x siirrettävä määrä leveyssuunnassa.
+     * @param y siirrettävä määrä korkeussuunnassa.
+     */
     public void siirra(int x, int y) {
         this.x += x;
         this.y += y;

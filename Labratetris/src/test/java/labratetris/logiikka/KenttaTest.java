@@ -49,31 +49,47 @@ public class KenttaTest {
         kentta.tyhjenna(0, 0);
         assertEquals(false, kentta.onkoRuudussaPala(0, 0));
     }
-    
+
     @Test
     public void onkoRiviTaynna() {
-        for (int i = 0; i < 10; i++){
-            kentta.tayta(i, 0, new Pala(i, 0));
-        }
-        assertEquals(true, kentta.onkoRiviTaynna(0));      
-        
-        kentta.tyhjenna(0, 0);
-        assertEquals(false, kentta.onkoRiviTaynna(0));
-    }
-    @Test
-    public void rivinTyhjennys() {
-        for (int i = 0; i < 10; i++){
+        for (int i = 0; i < 10; i++) {
             kentta.tayta(i, 0, new Pala(i, 0));
         }
         assertEquals(true, kentta.onkoRiviTaynna(0));
-        
+
+        kentta.tyhjenna(0, 0);
+        assertEquals(false, kentta.onkoRiviTaynna(0));
+    }
+
+    @Test
+    public void rivinTyhjennys() {
+        for (int i = 0; i < 10; i++) {
+            kentta.tayta(i, 0, new Pala(i, 0));
+        }
+        assertEquals(true, kentta.onkoRiviTaynna(0));
+
         kentta.tyhjennaRivi(0);
         assertEquals(false, kentta.onkoRiviTaynna(0));
     }
 
+    @Test
+    public void kaikkienRivienTyhjennysToimii() {
+        kentta.tayta(0, 0, new Pala(0, 0));
+        kentta.tyhjennaTaydetRivit();
+        assertEquals(true, kentta.onkoRuudussaPala(0, 0));
+
+        for (int i = 0; i < kentta.getKorkeus(); i++) {
+            for (int x = 0; x < kentta.getLeveys(); x++) {
+                kentta.tayta(x, i, new Pala(x, i));
+            }
+        }
+        kentta.tyhjennaTaydetRivit();
+        assertEquals(false, kentta.onkoRuudussaPala(0, 0));
+    }
+
     // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    // @Test
-    // public void hello() {}
+// The methods must be annotated with annotation @Test. For example:
+//
+// @Test
+// public void hello() {}
 }

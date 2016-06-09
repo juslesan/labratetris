@@ -12,6 +12,8 @@ import labratetris.logiikka.Pala;
 /**
  *
  * @author juslesan
+ *
+ * Luokka on I muotoisen palikan pohja.
  */
 public class I extends Palikka {
 
@@ -19,14 +21,8 @@ public class I extends Palikka {
 //    public Enum kulma;
     public I(Kentta kentta) {
         super(kentta);
-//        this.kulma = Kulma.OIKEA;
-//        this.palat = new ArrayList();
-
-        palat.add(new Pala(kentta.getLeveys() / 2 - 2, 2));
-        palat.add(new Pala(kentta.getLeveys() / 2 - 1, 2));
-        palat.add(new Pala(kentta.getLeveys() / 2, 2));
-        palat.add(new Pala(kentta.getLeveys() / 2 + 1, 2));
-
+        super.vari = vari.SYAANI;
+        aloitusPaikka();
     }
 
     public void kaannaAlas() {
@@ -59,6 +55,16 @@ public class I extends Palikka {
         this.palat.get(2).siirra(1, 0);
         this.palat.get(3).siirra(2, 1);
         kulma = Kulma.OIKEA;
+    }
+
+    @Override
+    public void aloitusPaikka() {
+        palat.clear();
+        palat.add(new Pala(kentta.getLeveys() / 2 - 2, 2));
+        palat.add(new Pala(kentta.getLeveys() / 2 - 1, 2));
+        palat.add(new Pala(kentta.getLeveys() / 2, 2));
+        palat.add(new Pala(kentta.getLeveys() / 2 + 1, 2));
+
     }
 
 }

@@ -6,6 +6,8 @@ import java.util.Collections;
 /**
  *
  * @author juslesan
+ *
+ * Luokan tarkoituksena on toimia tetrispelikenttää ylläpitävänä.
  */
 public class Kentta {
 
@@ -29,6 +31,13 @@ public class Kentta {
 
     }
 
+    /**
+     * Metodi kertoo onko parametrinä annetussa ruudussa palaa.
+     *
+     * @param x ruudun x koordinaatti
+     * @param y ruudun y koordinaatti
+     * @return palauttaa true jos ruudussa pala, false jos tyhjä.
+     */
     public boolean onkoRuudussaPala(int x, int y) {
         if (y >= korkeus || x < 0 || x >= leveys) {
             return true;
@@ -39,6 +48,13 @@ public class Kentta {
         return true;
     }
 
+    /**
+     * Metodi kertoo jos yksittäinen rivi on täynnä ja täten valmis
+     * tyhjennettäväksi.
+     *
+     * @param y kertoo miltä riviltä haetaan.
+     * @return palauttaa true jos täysi, false jos ei.
+     */
     public boolean onkoRiviTaynna(int y) {
         for (int i = 0; i < this.leveys; i++) {
             if (onkoRuudussaPala(i, y) == false) {
@@ -48,14 +64,32 @@ public class Kentta {
         return true;
     }
 
+    /**
+     * Metodin tarkoitksena on täyttää yksittäinen ruutu.
+     *
+     * @param x ruudun x-koordinaatti
+     * @param y ruudun y-koordinaatti
+     * @param pala ruutuun lisättävä pala.
+     */
     public void tayta(int x, int y, Pala pala) {
         this.kentta[y][x] = pala;
     }
 
+    /**
+     * Metodin tarkoituksena on tyhjentää ruutu.
+     *
+     * @param x ruudun x-koordinaatti.
+     * @param y ruudun y-koordinaatti.
+     */
     public void tyhjenna(int x, int y) {
         this.kentta[y][x] = null;
     }
 
+    /**
+     * Metodin tarkoituksena on tyhjentää kaikilta rivin ruuduilta palat pois.
+     *
+     * @param y kertoo miltä riviltä tyhjennetään.
+     */
     public void tyhjennaRivi(int y) {
         for (int i = 0; i < leveys; i++) {
             tyhjenna(i, y);
@@ -74,4 +108,34 @@ public class Kentta {
         return this.kentta;
     }
 
+    /**
+     * Metodi etsii kaikki täydet rivit ja tyhjentää ne.
+     *
+     * @return palauttaa tyhjennettyjen rivien määrän.
+     */
+    public int tyhjennaTaydetRivit() {
+        int montako = 0;
+        for (int i = 0; i < this.korkeus; i++) {
+            if (onkoRiviTaynna(i)) {
+                tyhjennaRivi(i);
+                montako++;
+            }
+        }
+        return montako;
+    }
+
+    /**
+     * Metodin tarkoitus on tarkistaa että paloja ei ole päässyt liian
+     * korkealle, mikäli on niin peli loppuu.
+     *
+     * @return palauuttaa true jos paloja on liian korkealla.
+     */
+    public boolean meneekoLiianKorkealle() {
+        for (int i = 0; i < this.leveys; i++) {
+            if (onkoRuudussaPala(i, korkeus - 1)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

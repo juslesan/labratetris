@@ -8,6 +8,8 @@ package labratetris.logiikka.palikat;
 /**
  *
  * @author juslesan
+ *
+ * Enumi jonka tarkoitus on kertoa mikä on palikan kulma minäkin hetkenä.
  */
 public enum Kulma {
 

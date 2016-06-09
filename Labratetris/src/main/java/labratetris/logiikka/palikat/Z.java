@@ -11,16 +11,15 @@ import labratetris.logiikka.Pala;
 /**
  *
  * @author juslesan
+ *
+ * Luokka on Z muotoisen palikan pohja.
  */
 public class Z extends Palikka {
 
     public Z(Kentta kentta) {
         super(kentta);
-
-        palat.add(new Pala(kentta.getLeveys() / 2 - 2, 1));
-        palat.add(new Pala(kentta.getLeveys() / 2 - 1, 1));
-        palat.add(new Pala(kentta.getLeveys() / 2 - 1, 2));
-        palat.add(new Pala(kentta.getLeveys() / 2, 2));
+        super.vari = vari.PUNAINEN;
+        aloitusPaikka();
     }
 
     public void kaannaAlas() {
@@ -53,6 +52,15 @@ public class Z extends Palikka {
         this.palat.get(2).siirra(0, 0);
         this.palat.get(3).siirra(1, 1);
         this.kulma = Kulma.OIKEA;
+    }
+
+    @Override
+    public void aloitusPaikka() {
+        palat.clear();
+        palat.add(new Pala(kentta.getLeveys() / 2 - 2, 1));
+        palat.add(new Pala(kentta.getLeveys() / 2 - 1, 1));
+        palat.add(new Pala(kentta.getLeveys() / 2 - 1, 2));
+        palat.add(new Pala(kentta.getLeveys() / 2, 2));
     }
 
 }
