@@ -24,7 +24,7 @@ public class Main {
         tetris.start();
     }
 
-    public static void tulostaKentta(Kentta kentta) {
+    public void tulostaKentta(Kentta kentta) {
         for (int i = 0; i < 22; i++) {
             for (int x = 0; x < 10; x++) {
                 if (kentta.onkoRuudussaPala(x, i)) {

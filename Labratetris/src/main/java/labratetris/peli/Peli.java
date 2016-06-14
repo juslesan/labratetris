@@ -81,8 +81,8 @@ public class Peli extends Timer implements ActionListener {
         }
         this.palikka.putoa();
 
-        System.out.println(palikka.toString());
-        System.out.println(jatkuuko);
+//        System.out.println(palikka.toString());
+//        System.out.println(jatkuuko);
         paivita();
         super.setDelay(1000 / vaikeus);
 

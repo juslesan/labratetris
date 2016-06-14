@@ -19,6 +19,7 @@ public class Pala {
         this.x = x;
         this.y = y;
         this.pudonnut = false;
+
     }
 
     public Pala(int x, int y, Vari vari) {
@@ -30,6 +31,7 @@ public class Pala {
 
     public int getX() {
         return x;
+
     }
 
     public int getY() {
