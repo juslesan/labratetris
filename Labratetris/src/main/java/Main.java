@@ -1,5 +1,6 @@
 
 import java.util.Random;
+import javax.swing.SwingUtilities;
 import labratetris.gui.*;
 import labratetris.logiikka.Kentta;
 import labratetris.logiikka.Pala;
@@ -15,9 +16,12 @@ public class Main {
 //        }
         Peli tetris = new Peli(22, 12, 2);
         Kayttoliittyma kayttoliittyma = new Kayttoliittyma(tetris, 20);
-        kayttoliittyma.run();
+//        SwingUtilities.invokeLater(kayttoliittyma);
 
+        kayttoliittyma.run();
         tetris.lisaaPaivitettava(kayttoliittyma.getPaivitettava());
+
+        tetris.start();
     }
 
     public static void tulostaKentta(Kentta kentta) {

@@ -31,6 +31,9 @@ public class Kayttoliittyma implements Runnable {
 
     @Override
     public void run() {
+        if (frame != null) {
+            frame.getContentPane().removeAll();
+        }
         frame = new JFrame("Labratetris");
         int leveys = (peli.getLeveys() * sivunPituus) + sivunPituus;
         int korkeus = (peli.getKorkeus() * sivunPituus) + sivunPituus * 2;
@@ -40,7 +43,7 @@ public class Kayttoliittyma implements Runnable {
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         luoKomponentit(frame.getContentPane());
-
+        this.tetriskentta.paivita();
         frame.pack();
         frame.setVisible(true);
 

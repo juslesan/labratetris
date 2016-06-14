@@ -30,6 +30,7 @@ public class Tetriskentta extends JPanel implements Paivitettava {
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
+        KentanPalat(g);
         for (Pala pala : this.peli.getPalikka().palat()) {
             palikanVari(g, this.peli.getPalikka());
             g.fill3DRect(pala.getX() * palanSivunPituus, pala.getY() * palanSivunPituus, palanSivunPituus, palanSivunPituus, true);
@@ -39,7 +40,16 @@ public class Tetriskentta extends JPanel implements Paivitettava {
 
     @Override
     public void paivita() {
+        super.removeAll();
+        super.revalidate();
         super.repaint();
+    }
+
+    protected void KentanPalat(Graphics g) {
+        for (Pala pala : this.peli.getKentta().kentanPalat()) {
+            palanVari(g, pala);
+            g.fill3DRect(pala.getX() * palanSivunPituus, pala.getY() * palanSivunPituus, palanSivunPituus, palanSivunPituus, true);
+        }
     }
 
     public void palikanVari(Graphics g, Palikka palikka) {
@@ -62,6 +72,30 @@ public class Tetriskentta extends JPanel implements Paivitettava {
             g.setColor(java.awt.Color.BLUE);
         }
         if (palikka.getVari() == Vari.PURPPURA) {
+            g.setColor(java.awt.Color.MAGENTA);
+        }
+    }
+
+    public void palanVari(Graphics g, Pala pala) {
+        if (pala.getVari() == Vari.SYAANI) {
+            g.setColor(java.awt.Color.CYAN);
+        }
+        if (pala.getVari() == Vari.KELTAINEN) {
+            g.setColor(java.awt.Color.YELLOW);
+        }
+        if (pala.getVari() == Vari.ORANSSI) {
+            g.setColor(java.awt.Color.ORANGE);
+        }
+        if (pala.getVari() == Vari.PUNAINEN) {
+            g.setColor(java.awt.Color.RED);
+        }
+        if (pala.getVari() == Vari.VIHREA) {
+            g.setColor(java.awt.Color.GREEN);
+        }
+        if (pala.getVari() == Vari.SININEN) {
+            g.setColor(java.awt.Color.BLUE);
+        }
+        if (pala.getVari() == Vari.PURPPURA) {
             g.setColor(java.awt.Color.MAGENTA);
         }
     }

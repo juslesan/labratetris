@@ -80,9 +80,13 @@ public class Kentta {
      *
      * @param x ruudun x-koordinaatti.
      * @param y ruudun y-koordinaatti.
+     * @return palauttaa poistetun palan
      */
-    public void tyhjenna(int x, int y) {
+    public Pala tyhjenna(int x, int y) {
+        Pala pala = this.kentta[y][x];
         this.kentta[y][x] = null;
+
+        return pala;
     }
 
     /**
@@ -118,6 +122,7 @@ public class Kentta {
         for (int i = 0; i < this.korkeus; i++) {
             if (onkoRiviTaynna(i)) {
                 tyhjennaRivi(i);
+                pudotaTyhjennetynRivinYlapuolisetRivit(i);
                 montako++;
             }
         }
@@ -132,10 +137,35 @@ public class Kentta {
      */
     public boolean meneekoLiianKorkealle() {
         for (int i = 0; i < this.leveys; i++) {
-            if (onkoRuudussaPala(i, korkeus - 1)) {
+            if (onkoRuudussaPala(i, 1)) {
                 return true;
             }
         }
         return false;
+    }
+
+    public ArrayList<Pala> kentanPalat() {
+        ArrayList<Pala> palat = new ArrayList();
+        for (int y = 0; y < this.korkeus; y++) {
+            for (int x = 0; x < this.leveys; x++) {
+                if (onkoRuudussaPala(x, y)) {
+                    palat.add(kentta[y][x]);
+                }
+            }
+        }
+
+        return palat;
+    }
+
+    public void pudotaTyhjennetynRivinYlapuolisetRivit(int y) {
+        for (; y > 0; y--) {
+            for (int x = 0; x < this.leveys; x++) {
+                if (onkoRuudussaPala(x, y)) {
+                    Pala pala = tyhjenna(x, y);
+                    pala.putoa();
+                    tayta(x, y + 1, pala);
+                }
+            }
+        }
     }
 }

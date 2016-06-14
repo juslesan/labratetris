@@ -37,7 +37,7 @@ public class Peli extends Timer implements ActionListener {
     private int vaikeusTasonVaihto;
 
     public Peli(int korkeus, int leveys, int vaikeus) {
-        super(2000, null);
+        super(1000 / vaikeus, null);
         this.kentta = new Kentta(korkeus, leveys);
         this.palikkaArpa = new Random();
         this.vaihtoPala = null;
@@ -54,7 +54,7 @@ public class Peli extends Timer implements ActionListener {
         this.paivitettavat = new ArrayList();
 
         addActionListener(this);
-        setInitialDelay(2000);
+        setInitialDelay(1000 / vaikeus);
     }
 
     /**
@@ -71,17 +71,20 @@ public class Peli extends Timer implements ActionListener {
         }
         if (!this.palikka.voikoPudota()) {
             this.palikka.jaadytaKentalle();
-            int alas = this.kentta.tyhjennaTaydetRivit();
-            pisteet += Math.pow(vaikeus, alas);
-            vaikeusTasonVaihto(alas);
+            int tyhjennettyja = this.kentta.tyhjennaTaydetRivit();
+            pisteet += Math.pow(vaikeus, tyhjennettyja);
+            vaikeusTasonVaihto(tyhjennettyja);
             uusiPalikka();
         }
         if (this.kentta.meneekoLiianKorkealle()) {
             jatkuuko = false;
         }
         this.palikka.putoa();
+
+        System.out.println(palikka.toString());
+        System.out.println(jatkuuko);
         paivita();
-        super.setDelay(2000 / vaikeus);
+        super.setDelay(1000 / vaikeus);
 
     }
 

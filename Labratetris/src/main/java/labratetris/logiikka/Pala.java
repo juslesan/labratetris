@@ -13,11 +13,19 @@ public class Pala {
     private int y;
     private int x;
     private boolean pudonnut;
+    private Vari vari;
 
     public Pala(int x, int y) {
         this.x = x;
         this.y = y;
         this.pudonnut = false;
+    }
+
+    public Pala(int x, int y, Vari vari) {
+        this.x = x;
+        this.y = y;
+        this.pudonnut = false;
+        this.vari = vari;
     }
 
     public int getX() {
@@ -66,6 +74,14 @@ public class Pala {
     public void siirra(int x, int y) {
         this.x += x;
         this.y += y;
+    }
+
+    public void setVari(Vari vari) {
+        this.vari = vari;
+    }
+
+    public Vari getVari() {
+        return this.vari;
     }
 
     @Override

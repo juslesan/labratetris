@@ -57,9 +57,9 @@ public class T extends Palikka {
     @Override
     public void aloitusPaikka() {
         palat.clear();
-        palat.add(new Pala(kentta.getLeveys() / 2 - 2, 2));
-        palat.add(new Pala(kentta.getLeveys() / 2 - 1, 2));
-        palat.add(new Pala(kentta.getLeveys() / 2 - 1, 1));
-        palat.add(new Pala(kentta.getLeveys() / 2, 2));
+        palat.add(new Pala(kentta.getLeveys() / 2 - 2, 2, super.vari));
+        palat.add(new Pala(kentta.getLeveys() / 2 - 1, 2, super.vari));
+        palat.add(new Pala(kentta.getLeveys() / 2 - 1, 1, super.vari));
+        palat.add(new Pala(kentta.getLeveys() / 2, 2, super.vari));
     }
 }
