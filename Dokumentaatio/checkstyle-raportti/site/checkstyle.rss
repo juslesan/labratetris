@@ -25,8 +25,8 @@ under the License.
     <language>en-us</language>
     <copyright>&#169;2016</copyright>
     <item>
-      <title>File: 19,
-             Errors: 3,
+      <title>File: 23,
+             Errors: 2,
              Warnings: 0,
              Infos: 0
       </title>
@@ -61,6 +61,20 @@ under the License.
                           <tr>
                 <td>
                   <a href="${project.url}/checkstyle.html#labratetris.gui.Tetriskentta.java">labratetris/gui/Tetriskentta.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#labratetris.gui.NaytaSeuraavaPalikka1.java">labratetris/gui/NaytaSeuraavaPalikka1.java</a>
                 </td>
                 <td>
                   0
@@ -116,6 +130,20 @@ under the License.
               </tr>
                           <tr>
                 <td>
+                  <a href="${project.url}/checkstyle.html#labratetris.gui.Infopaneeli.java">labratetris/gui/Infopaneeli.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
                   <a href="${project.url}/checkstyle.html#labratetris.logiikka.palikat.I.java">labratetris/logiikka/palikat/I.java</a>
                 </td>
                 <td>
@@ -131,6 +159,20 @@ under the License.
                           <tr>
                 <td>
                   <a href="${project.url}/checkstyle.html#labratetris.logiikka.palikat.T.java">labratetris/logiikka/palikat/T.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#labratetris.gui.NaytaSeuraavaPalikka3.java">labratetris/gui/NaytaSeuraavaPalikka3.java</a>
                 </td>
                 <td>
                   0
@@ -186,20 +228,6 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#labratetris.gui.naytaPalikka.java">labratetris/gui/naytaPalikka.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  1
-                </td>
-              </tr>
-                          <tr>
-                <td>
                   <a href="${project.url}/checkstyle.html#labratetris.logiikka.palikat.S.java">labratetris/logiikka/palikat/S.java</a>
                 </td>
                 <td>
@@ -215,6 +243,34 @@ under the License.
                           <tr>
                 <td>
                   <a href="${project.url}/checkstyle.html#Main.java">Main.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#labratetris.gui.NaytaSeuraavaPalikka2.java">labratetris/gui/NaytaSeuraavaPalikka2.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#labratetris.gui.NaytaVaihtoPalikka.java">labratetris/gui/NaytaVaihtoPalikka.java</a>
                 </td>
                 <td>
                   0

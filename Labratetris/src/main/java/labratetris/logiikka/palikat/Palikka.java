@@ -78,6 +78,8 @@ public abstract class Palikka {
 
     public abstract void aloitusPaikka();
 
+    public abstract void piirtoPaikka();
+
     /**
      * Siirtää koko palikkaa ruudun verran vasemmalle.
      */

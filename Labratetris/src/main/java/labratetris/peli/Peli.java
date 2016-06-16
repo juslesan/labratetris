@@ -9,6 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Random;
+import javax.swing.JFrame;
 import javax.swing.Timer;
 import labratetris.gui.Paivitettava;
 import labratetris.logiikka.*;
@@ -35,6 +36,7 @@ public class Peli extends Timer implements ActionListener {
     private Paivitettava paivitettava;
     private int vaikeus;
     private int vaikeusTasonVaihto;
+    private JFrame frame;
 
     public Peli(int korkeus, int leveys, int vaikeus) {
         super(1000 / vaikeus, null);
@@ -44,6 +46,7 @@ public class Peli extends Timer implements ActionListener {
         this.seuraavat = new ArrayList();
         for (int i = 0; i < 3; i++) {
             seuraavat.add(arvoPalikka());
+            seuraavat.get(i).piirtoPaikka();
         }
         this.palikka = arvoPalikka();
         this.pisteet = 0;
@@ -52,6 +55,7 @@ public class Peli extends Timer implements ActionListener {
         this.leveys = leveys;
         this.vaikeus = vaikeus;
         this.paivitettavat = new ArrayList();
+        this.vaikeusTasonVaihto = 0;
 
         addActionListener(this);
         setInitialDelay(1000 / vaikeus);
@@ -67,6 +71,7 @@ public class Peli extends Timer implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (!jatkuuko) {
+
             return;
         }
         if (!this.palikka.voikoPudota()) {
@@ -78,12 +83,16 @@ public class Peli extends Timer implements ActionListener {
         }
         if (this.kentta.meneekoLiianKorkealle()) {
             jatkuuko = false;
+            frame.dispose();
         }
         this.palikka.putoa();
 
 //        System.out.println(palikka.toString());
 //        System.out.println(jatkuuko);
         paivita();
+//        System.out.println(this.vaikeusTasonVaihto);
+//        System.out.println(pisteet);
+//        System.out.println(vaikeus);
         super.setDelay(1000 / vaikeus);
 
     }
@@ -95,7 +104,10 @@ public class Peli extends Timer implements ActionListener {
      */
     public void uusiPalikka() {
         this.palikka = seuraavat.remove(0);
+        this.palikka.aloitusPaikka();
         this.seuraavat.add(arvoPalikka());
+        seuraavat.get(2).piirtoPaikka();
+
     }
 
     /**
@@ -107,12 +119,13 @@ public class Peli extends Timer implements ActionListener {
         if (this.vaihtoPala == null) {
             this.vaihtoPala = this.palikka;
             uusiPalikka();
-            this.vaihtoPala.aloitusPaikka();
+            this.vaihtoPala.piirtoPaikka();
         } else {
             Palikka vaihdetaan = this.vaihtoPala;
             this.vaihtoPala = this.palikka;
             this.palikka = vaihdetaan;
-            this.vaihtoPala.aloitusPaikka();
+            this.palikka.aloitusPaikka();
+            this.vaihtoPala.piirtoPaikka();
         }
     }
 
@@ -191,7 +204,7 @@ public class Peli extends Timer implements ActionListener {
      */
     public void vaikeusTasonVaihto(int luku) {
         this.vaikeusTasonVaihto += luku;
-        if (this.vaikeusTasonVaihto >= luku) {
+        if (this.vaikeusTasonVaihto >= 6) {
             this.vaikeusTasonVaihto = this.vaikeusTasonVaihto - 6;
             this.vaikeus++;
         }
@@ -215,5 +228,13 @@ public class Peli extends Timer implements ActionListener {
 
     public ArrayList<Palikka> getSeuraavat() {
         return this.seuraavat;
+    }
+
+    public boolean getJatkuuko() {
+        return this.jatkuuko;
+    }
+
+    public void setFrame(JFrame frame) {
+        this.frame = frame;
     }
 }

@@ -63,4 +63,12 @@ public class S extends Palikka {
         palat.add(new Pala(kentta.getLeveys() / 2, 1, super.vari));
     }
 
+    @Override
+    public void piirtoPaikka() {
+        palat.get(0).setPaikka(1, 2);
+        palat.get(1).setPaikka(2, 2);
+        palat.get(2).setPaikka(2, 1);
+        palat.get(3).setPaikka(3, 1);
+    }
+
 }

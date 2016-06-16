@@ -90,4 +90,9 @@ public class Pala {
     public String toString() {
         return "(" + this.x + "," + this.y + ")";
     }
+
+    public void setPaikka(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
 }

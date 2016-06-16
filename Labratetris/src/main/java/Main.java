@@ -14,12 +14,12 @@ public class Main {
 //        for (int i = 0; i < 100; i++) {
 //            System.out.println(random.nextInt(7));
 //        }
-        Peli tetris = new Peli(22, 12, 2);
+        Peli tetris = new Peli(24, 12, 2);
         Kayttoliittyma kayttoliittyma = new Kayttoliittyma(tetris, 20);
 //        SwingUtilities.invokeLater(kayttoliittyma);
 
         kayttoliittyma.run();
-        tetris.lisaaPaivitettava(kayttoliittyma.getPaivitettava());
+//        tetris.lisaaPaivitettava(kayttoliittyma.getTetriskentta());
 
         tetris.start();
     }

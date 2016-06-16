@@ -66,12 +66,20 @@
 <a class="jxr_linenumber" name="L58" href="#L58">58</a>      @Override
 <a class="jxr_linenumber" name="L59" href="#L59">59</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> aloitusPaikka() {
 <a class="jxr_linenumber" name="L60" href="#L60">60</a>          palat.clear();
-<a class="jxr_linenumber" name="L61" href="#L61">61</a>          <strong class="jxr_keyword">super</strong>.palat.add(<strong class="jxr_keyword">new</strong> <a href="../../../labratetris/logiikka/Pala.html">Pala</a>(kentta.getLeveys() / 2 - 2, 2));
-<a class="jxr_linenumber" name="L62" href="#L62">62</a>          <strong class="jxr_keyword">super</strong>.palat.add(<strong class="jxr_keyword">new</strong> <a href="../../../labratetris/logiikka/Pala.html">Pala</a>(kentta.getLeveys() / 2 - 1, 2));
-<a class="jxr_linenumber" name="L63" href="#L63">63</a>          <strong class="jxr_keyword">super</strong>.palat.add(<strong class="jxr_keyword">new</strong> <a href="../../../labratetris/logiikka/Pala.html">Pala</a>(kentta.getLeveys() / 2, 2));
-<a class="jxr_linenumber" name="L64" href="#L64">64</a>          <strong class="jxr_keyword">super</strong>.palat.add(<strong class="jxr_keyword">new</strong> <a href="../../../labratetris/logiikka/Pala.html">Pala</a>(kentta.getLeveys() / 2, 1));
+<a class="jxr_linenumber" name="L61" href="#L61">61</a>          <strong class="jxr_keyword">super</strong>.palat.add(<strong class="jxr_keyword">new</strong> <a href="../../../labratetris/logiikka/Pala.html">Pala</a>(kentta.getLeveys() / 2 - 2, 2, <strong class="jxr_keyword">super</strong>.vari));
+<a class="jxr_linenumber" name="L62" href="#L62">62</a>          <strong class="jxr_keyword">super</strong>.palat.add(<strong class="jxr_keyword">new</strong> <a href="../../../labratetris/logiikka/Pala.html">Pala</a>(kentta.getLeveys() / 2 - 1, 2, <strong class="jxr_keyword">super</strong>.vari));
+<a class="jxr_linenumber" name="L63" href="#L63">63</a>          <strong class="jxr_keyword">super</strong>.palat.add(<strong class="jxr_keyword">new</strong> <a href="../../../labratetris/logiikka/Pala.html">Pala</a>(kentta.getLeveys() / 2, 2, <strong class="jxr_keyword">super</strong>.vari));
+<a class="jxr_linenumber" name="L64" href="#L64">64</a>          <strong class="jxr_keyword">super</strong>.palat.add(<strong class="jxr_keyword">new</strong> <a href="../../../labratetris/logiikka/Pala.html">Pala</a>(kentta.getLeveys() / 2, 1, <strong class="jxr_keyword">super</strong>.vari));
 <a class="jxr_linenumber" name="L65" href="#L65">65</a>      }
-<a class="jxr_linenumber" name="L66" href="#L66">66</a>  }
+<a class="jxr_linenumber" name="L66" href="#L66">66</a>  
+<a class="jxr_linenumber" name="L67" href="#L67">67</a>      @Override
+<a class="jxr_linenumber" name="L68" href="#L68">68</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> piirtoPaikka() {
+<a class="jxr_linenumber" name="L69" href="#L69">69</a>          palat.get(0).setPaikka(1, 2);
+<a class="jxr_linenumber" name="L70" href="#L70">70</a>          palat.get(1).setPaikka(2, 2);
+<a class="jxr_linenumber" name="L71" href="#L71">71</a>          palat.get(2).setPaikka(3, 2);
+<a class="jxr_linenumber" name="L72" href="#L72">72</a>          palat.get(3).setPaikka(3, 1);
+<a class="jxr_linenumber" name="L73" href="#L73">73</a>      }
+<a class="jxr_linenumber" name="L74" href="#L74">74</a>  }
 </pre>
 <hr/>
 <div id="footer">Copyright &#169; 2016. All rights reserved.</div>

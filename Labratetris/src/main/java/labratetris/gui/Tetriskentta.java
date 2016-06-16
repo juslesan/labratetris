@@ -5,6 +5,7 @@
  */
 package labratetris.gui;
 
+import java.awt.Dimension;
 import java.awt.Graphics;
 import javax.swing.JPanel;
 import labratetris.logiikka.*;
@@ -18,41 +19,43 @@ import labratetris.logiikka.palikat.*;
  * Tetriskentän graafista käyttöliittymää ohjaava luokka.
  */
 public class Tetriskentta extends JPanel implements Paivitettava {
-
+    
     private Peli peli;
     private int palanSivunPituus;
-
+    
     public Tetriskentta(Peli peli, int palanSivunPituus) {
         this.peli = peli;
         this.palanSivunPituus = palanSivunPituus;
+//        super.setPreferredSize(new Dimension(palanSivunPituus * 5, palanSivunPituus * 3));
     }
-
+    
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-        KentanPalat(g);
+        kentanReunat(g);
+        kentanPalat(g);
         for (Pala pala : this.peli.getPalikka().palat()) {
             palikanVari(g, this.peli.getPalikka());
             g.fill3DRect(pala.getX() * palanSivunPituus, pala.getY() * palanSivunPituus, palanSivunPituus, palanSivunPituus, true);
         }
-
+        
     }
-
+    
     @Override
     public void paivita() {
         super.removeAll();
         super.revalidate();
         super.repaint();
     }
-
-    protected void KentanPalat(Graphics g) {
+    
+    protected void kentanPalat(Graphics g) {
         for (Pala pala : this.peli.getKentta().kentanPalat()) {
             palanVari(g, pala);
             g.fill3DRect(pala.getX() * palanSivunPituus, pala.getY() * palanSivunPituus, palanSivunPituus, palanSivunPituus, true);
         }
     }
-
-    public void palikanVari(Graphics g, Palikka palikka) {
+    
+    private void palikanVari(Graphics g, Palikka palikka) {
         if (palikka.getVari() == Vari.SYAANI) {
             g.setColor(java.awt.Color.CYAN);
         }
@@ -75,8 +78,8 @@ public class Tetriskentta extends JPanel implements Paivitettava {
             g.setColor(java.awt.Color.MAGENTA);
         }
     }
-
-    public void palanVari(Graphics g, Pala pala) {
+    
+    private void palanVari(Graphics g, Pala pala) {
         if (pala.getVari() == Vari.SYAANI) {
             g.setColor(java.awt.Color.CYAN);
         }
@@ -99,5 +102,11 @@ public class Tetriskentta extends JPanel implements Paivitettava {
             g.setColor(java.awt.Color.MAGENTA);
         }
     }
-
+    
+    private void kentanReunat(Graphics g) {
+        g.setColor(java.awt.Color.BLACK);
+        g.fillRect(0, 0, (peli.getLeveys() * palanSivunPituus), 10);
+        g.fillRect((peli.getLeveys() * palanSivunPituus), 0, 10, (peli.getKorkeus() * palanSivunPituus));
+        g.fillRect(0, (peli.getKorkeus() * palanSivunPituus), (peli.getLeveys() * palanSivunPituus) + 10, 10);
+    }
 }
