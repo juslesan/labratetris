@@ -12,8 +12,11 @@ import java.util.Random;
 import javax.swing.JFrame;
 import javax.swing.Timer;
 import labratetris.gui.Paivitettava;
+import labratetris.gui.ValikkoKali;
+import labratetris.gui.pistetilastot.UusiEnnatys;
 import labratetris.logiikka.*;
 import labratetris.logiikka.palikat.*;
+import labratetris.lukija.PisteidenLukija;
 
 /**
  *
@@ -33,13 +36,13 @@ public class Peli extends Timer implements ActionListener {
     private int korkeus;
     private int leveys;
     private ArrayList<Paivitettava> paivitettavat;
-    private Paivitettava paivitettava;
     private int vaikeus;
     private int vaikeusTasonVaihto;
     private JFrame frame;
+    private PisteidenLukija lukija;
 
     public Peli(int korkeus, int leveys, int vaikeus) {
-        super(1000 / vaikeus, null);
+        super(1200 / vaikeus, null);
         this.kentta = new Kentta(korkeus, leveys);
         this.palikkaArpa = new Random();
         this.vaihtoPala = null;
@@ -56,22 +59,14 @@ public class Peli extends Timer implements ActionListener {
         this.vaikeus = vaikeus;
         this.paivitettavat = new ArrayList();
         this.vaikeusTasonVaihto = 0;
-
+        this.lukija = new PisteidenLukija();
         addActionListener(this);
-        setInitialDelay(1000 / vaikeus);
+        setInitialDelay(1200 / vaikeus);
     }
 
-    /**
-     * Metodin tarkoitus on toimia peliä jatkuvasti eteenpäin vievänä.
-     *
-     * @param e
-     *
-     *
-     */
     @Override
     public void actionPerformed(ActionEvent e) {
         if (!jatkuuko) {
-
             return;
         }
         if (!this.palikka.voikoPudota()) {
@@ -83,17 +78,22 @@ public class Peli extends Timer implements ActionListener {
         }
         if (this.kentta.meneekoLiianKorkealle()) {
             jatkuuko = false;
+            try {
+                if (this.lukija.onkoUusiEnnatys(pisteet)) {
+                    UusiEnnatys uusi = new UusiEnnatys(pisteet);
+                    uusi.run();
+                } else {
+                    ValikkoKali kali = new ValikkoKali();
+                    kali.run();
+                }
+            } catch (Exception error) {
+                System.out.println(error);
+            }
             frame.dispose();
         }
         this.palikka.putoa();
-
-//        System.out.println(palikka.toString());
-//        System.out.println(jatkuuko);
         paivita();
-//        System.out.println(this.vaikeusTasonVaihto);
-//        System.out.println(pisteet);
-//        System.out.println(vaikeus);
-        super.setDelay(1000 / vaikeus);
+        super.setDelay(1200 / vaikeus);
 
     }
 
@@ -190,7 +190,6 @@ public class Peli extends Timer implements ActionListener {
         for (Paivitettava paivitettava : paivitettavat) {
             paivitettava.paivita();
         }
-//        paivitettava.paivita();
     }
 
     public int getPisteet() {
@@ -212,10 +211,6 @@ public class Peli extends Timer implements ActionListener {
 
     public void setPaivitettavat(ArrayList<Paivitettava> lista) {
         paivitettavat = lista;
-    }
-
-    public void setPaivitettava(Paivitettava paivitettava) {
-        this.paivitettava = paivitettava;
     }
 
     public int getVaikeus() {

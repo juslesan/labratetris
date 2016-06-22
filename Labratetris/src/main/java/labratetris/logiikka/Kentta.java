@@ -158,9 +158,10 @@ public class Kentta {
     }
 
     /**
-     * Metodin tarkoitus on siirtää kentällä olevia paloja alas kun rivejä tyhjennetään.
-     * 
-     * @param y 
+     * Metodin tarkoitus on siirtää kentällä olevia paloja alas, kun rivejä
+     * tyhjennettäessä.
+     *
+     * @param y
      */
     public void pudotaTyhjennetynRivinYlapuolisetRivit(int y) {
         for (; y > 0; y--) {

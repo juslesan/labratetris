@@ -1,32 +1,27 @@
+package labratetris.peli;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Random;
 import javax.swing.SwingUtilities;
 import labratetris.gui.*;
+import labratetris.gui.pistetilastot.UusiEnnatys;
 import labratetris.logiikka.Kentta;
 import labratetris.logiikka.Pala;
 import labratetris.logiikka.palikat.*;
+import labratetris.lukija.PisteidenLukija;
 import labratetris.peli.Peli;
 
 public class Main {
 
-    public static void main(String[] args) {
-//        Random random = new Random();
-//        for (int i = 0; i < 100; i++) {
-//            System.out.println(random.nextInt(7));
-//        }
-        Peli tetris = new Peli(24, 12, 2);
-        Kayttoliittyma kayttoliittyma = new Kayttoliittyma(tetris, 20);
-//        SwingUtilities.invokeLater(kayttoliittyma);
-
+    public static void main(String[] args) throws FileNotFoundException, IOException {
+        ValikkoKali kayttoliittyma = new ValikkoKali();
         kayttoliittyma.run();
-//        tetris.lisaaPaivitettava(kayttoliittyma.getTetriskentta());
-
-        tetris.start();
     }
 
     public void tulostaKentta(Kentta kentta) {
-        for (int i = 0; i < 22; i++) {
-            for (int x = 0; x < 10; x++) {
+        for (int i = 0; i < kentta.getKorkeus(); i++) {
+            for (int x = 0; x < kentta.getLeveys(); x++) {
                 if (kentta.onkoRuudussaPala(x, i)) {
                     System.out.print("X");
                 } else {

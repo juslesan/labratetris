@@ -14,5 +14,8 @@ package labratetris.gui;
  */
 public interface Paivitettava {
 
+    /**
+     * Paivittaa graafiset komponentit.
+     */
     void paivita();
 }

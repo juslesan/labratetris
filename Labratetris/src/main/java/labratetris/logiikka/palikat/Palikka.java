@@ -34,50 +34,52 @@ public abstract class Palikka {
      */
     public void kaanna() {
         if (this.kulma == Kulma.OIKEA) {
-            kaannaAlas();
-            if (!onkoKentalla() || !onkoTyhjallaRuudulla()) {
-                kaannaYlos();
-                kulma = Kulma.OIKEA;
-            }
+            rotaatioAlas();
             return;
         }
         if (this.kulma == Kulma.ALAS) {
-            kaannaVasen();
-            if (!onkoKentalla() || !onkoTyhjallaRuudulla()) {
-                kaannaOikea();
-                kulma = Kulma.ALAS;
-            }
+            rotaatioVasen();
             return;
         }
         if (this.kulma == Kulma.VASEN) {
-            kaannaYlos();
-            if (!onkoKentalla() || !onkoTyhjallaRuudulla()) {
-                kaannaAlas();
-                kulma = Kulma.VASEN;
-            }
+            rotaatioYlos();
             return;
         }
         if (this.kulma == Kulma.YLOS) {
-            kaannaOikea();
-            if (!onkoKentalla() || !onkoTyhjallaRuudulla()) {
-                kaannaVasen();
-                kulma = Kulma.YLOS;
-            }
+            rotaatioOikea();
             return;
         }
-
     }
 
+    /**
+     * Kääntää palikkaa alas.
+     */
     public abstract void kaannaAlas();
 
+    /**
+     * Kääntää palikkaa vasemmalle.
+     */
     public abstract void kaannaVasen();
 
+    /**
+     * Kääntää palikkaa ylös.
+     */
     public abstract void kaannaYlos();
 
+    /**
+     * Kääntää palikkaa oikealle.
+     */
     public abstract void kaannaOikea();
 
+    /**
+     * Asettaa palikan pelikentälle sen aloituspaikalle.
+     */
     public abstract void aloitusPaikka();
 
+    /**
+     * Asettaa palikan piirtopaikalle, jotta sen voi piirtää mm. seuraavana
+     * palikkana.
+     */
     public abstract void piirtoPaikka();
 
     /**
@@ -120,8 +122,8 @@ public abstract class Palikka {
      */
     public void jaadytaKentalle() {
         for (Pala pala : palat) {
+            pala.pudonnut();
             kentta.tayta(pala.getX(), pala.getY(), pala);
-
         }
     }
 
@@ -205,14 +207,11 @@ public abstract class Palikka {
      * Pudottaa palikan niin alas kuin mahdollista.
      */
     public void pudota() {
-        while (true) {
-            if (voikoPudota()) {
-                putoa();
-            } else {
-                break;
-            }
+        while (voikoPudota()) {
+            putoa();
         }
         for (Pala pala : palat) {
+            pala.pudonnut();
             kentta.tayta(pala.getX(), pala.getY(), pala);
         }
     }
@@ -231,5 +230,37 @@ public abstract class Palikka {
 
     public Vari getVari() {
         return vari;
+    }
+
+    private void rotaatioAlas() {
+        kaannaAlas();
+        if (!onkoKentalla() || !onkoTyhjallaRuudulla()) {
+            kaannaYlos();
+            kulma = Kulma.OIKEA;
+        }
+    }
+
+    private void rotaatioVasen() {
+        kaannaVasen();
+        if (!onkoKentalla() || !onkoTyhjallaRuudulla()) {
+            kaannaOikea();
+            kulma = Kulma.ALAS;
+        }
+    }
+
+    private void rotaatioYlos() {
+        kaannaYlos();
+        if (!onkoKentalla() || !onkoTyhjallaRuudulla()) {
+            kaannaAlas();
+            kulma = Kulma.VASEN;
+        }
+    }
+
+    private void rotaatioOikea() {
+        kaannaOikea();
+        if (!onkoKentalla() || !onkoTyhjallaRuudulla()) {
+            kaannaVasen();
+            kulma = Kulma.YLOS;
+        }
     }
 }

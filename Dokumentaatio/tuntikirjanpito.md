@@ -9,3 +9,5 @@ Päivä | Tunnit | Kuvaus
 14.06.2016 | 4h | Graafista käyttöliittymää.
 15.06.2016 | 3h | Graafista käyttöliittymää.
 16.06.2016 | 10h | Varsinaisen pelin GUI ja toiminnot loppuun, palautusvaatimukset.
+20.06.2016 | 9h | Valikko, pistetilastot ja muu toiminnallisuus, jotka eivät liity itse tetrikseen.
+22.06.2016 | 4h | Koodin siistimistä ja palautuksen valmistelua.

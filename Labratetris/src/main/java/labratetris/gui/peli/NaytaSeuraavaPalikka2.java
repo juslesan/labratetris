@@ -3,11 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package labratetris.gui;
+package labratetris.gui.peli;
 
 import java.awt.Dimension;
 import java.awt.Graphics;
 import javax.swing.JPanel;
+import labratetris.gui.Paivitettava;
 import labratetris.logiikka.Pala;
 import labratetris.logiikka.palikat.*;
 import labratetris.peli.Peli;
@@ -33,11 +34,7 @@ public class NaytaSeuraavaPalikka2 extends JPanel implements Paivitettava {
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-//        piirraReunat(g);
-
-//        this.palikka.piirtoPaikka();
         Palikka palikka = this.peli.getSeuraavat().get(1);
-//        System.out.println(palikka);
         for (Pala pala : palikka.palat()) {
             palikanVari(g, palikka);
             g.fill3DRect(pala.getX() * palanSivunPituus, pala.getY() * palanSivunPituus, palanSivunPituus, palanSivunPituus, true);
@@ -75,10 +72,4 @@ public class NaytaSeuraavaPalikka2 extends JPanel implements Paivitettava {
         }
     }
 
-    private void piirraReunat(Graphics g) {
-        g.setColor(java.awt.Color.BLACK);
-        g.fillRect(0, 0, (5 * palanSivunPituus), 10);
-        g.fillRect((5 * palanSivunPituus), 0, 10, (4 * palanSivunPituus));
-        g.fillRect(0, (4 * palanSivunPituus), (5 * palanSivunPituus) + 10, 10);
-    }
 }

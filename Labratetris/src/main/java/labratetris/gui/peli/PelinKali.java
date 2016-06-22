@@ -3,8 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package labratetris.gui;
+package labratetris.gui.peli;
 
+import labratetris.gui.peli.NaytaVaihtoPalikka;
+import labratetris.gui.peli.NaytaSeuraavaPalikka3;
+import labratetris.gui.peli.NaytaSeuraavaPalikka2;
+import labratetris.gui.peli.NaytaSeuraavaPalikka1;
 import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.Dimension;
@@ -17,6 +21,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.WindowConstants;
+import labratetris.peli.Nappaimistonkuuntelija;
+import labratetris.gui.Paivitettava;
 import labratetris.logiikka.palikat.*;
 import labratetris.peli.Peli;
 
@@ -24,9 +30,9 @@ import labratetris.peli.Peli;
  *
  * @author Santeri Juslenius
  *
- * GraafistÃ¤ kÃ¤yttÃ¶liittymÃ¤Ã¤ kokonaisuudessaan pyÃ¶rittÃ¤vÃ¤ luokka.
+ * Varsinaisen pelin graafisen käyttöliittymän kokonaisuudessaan kasaava luokka.
  */
-public class Kayttoliittyma implements Runnable {
+public class PelinKali implements Runnable {
 
     private JFrame frame;
     private Peli peli;
@@ -38,7 +44,7 @@ public class Kayttoliittyma implements Runnable {
     private NaytaSeuraavaPalikka3 seuraavaPalikka3;
     private Infopaneeli infopaneeli;
 
-    public Kayttoliittyma(Peli peli, int sivunPituus) {
+    public PelinKali(Peli peli, int sivunPituus) {
         this.peli = peli;
         this.sivunPituus = sivunPituus;
 
@@ -61,9 +67,9 @@ public class Kayttoliittyma implements Runnable {
 
         paivitaPalikkakentat();
         paivitaInfopaneeli();
-        
+
         lisaaPaivitettavat();
-        
+
         frame.pack();
         frame.setVisible(true);
         this.peli.setFrame(frame);
@@ -71,6 +77,7 @@ public class Kayttoliittyma implements Runnable {
 
     /**
      * Metodi luo kaikki pelin graafisen käyttöliittymän komponentit
+     *
      * @param container JFramen contentpane
      */
     public void luoKomponentit(Container container) {
@@ -115,9 +122,10 @@ public class Kayttoliittyma implements Runnable {
     public Paivitettava getTetriskentta() {
         return this.tetriskentta;
     }
-    
+
     /**
-     * Metodi päivittää kaikki komponentit mitkä kuvaavat seuraavia palikkoja tai varattua palikkaa.
+     * Metodi päivittää kaikki komponentit mitkä kuvaavat seuraavia palikkoja
+     * tai varattua palikkaa.
      */
     public void paivitaPalikkakentat() {
 
@@ -126,7 +134,7 @@ public class Kayttoliittyma implements Runnable {
         this.seuraavaPalikka2.paivita();
         this.seuraavaPalikka3.paivita();
     }
-    
+
     /**
      * Päivittää pisteet ja vaikeustason GUI:ssa
      */
@@ -142,9 +150,6 @@ public class Kayttoliittyma implements Runnable {
         return this.seuraavaPalikka2;
     }
 
-//    public Paivitettava getSeuraava3() {
-//        return this.seuraavaPalikka3;
-//    }
     public Paivitettava getVaihto() {
         return this.vaihtoPalikka;
     }
@@ -165,10 +170,4 @@ public class Kayttoliittyma implements Runnable {
         this.peli.lisaaPaivitettava(this.vaihtoPalikka);
     }
 
-//    public void paivitaKaikki() {
-//        ArrayList<Paivitettava> paivitettavat = getPaivitettava();
-//        for (Paivitettava paivitettava : paivitettavat) {
-//            paivitettava.paivita();
-//        }
-//    }
 }

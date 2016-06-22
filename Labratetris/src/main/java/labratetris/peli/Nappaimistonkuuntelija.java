@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package labratetris.gui;
+package labratetris.peli;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -30,11 +30,15 @@ public class Nappaimistonkuuntelija implements KeyListener {
     @Override
     public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_LEFT) {
-            peli.getPalikka().vasen();
+            if (!peli.getPalikka().palat().get(0).onkoPudonnut()) {
+                peli.getPalikka().vasen();
+            }
             peli.paivita();
         }
         if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
-            peli.getPalikka().oikea();
+            if (!peli.getPalikka().palat().get(0).onkoPudonnut()) {
+                peli.getPalikka().oikea();
+            }
             peli.paivita();
         }
         if (e.getKeyCode() == KeyEvent.VK_UP) {
@@ -50,7 +54,9 @@ public class Nappaimistonkuuntelija implements KeyListener {
             peli.paivita();
         }
         if (e.getKeyCode() == KeyEvent.VK_MINUS) {
-            peli.vaihtoPalikka();
+            if (!peli.getPalikka().palat().get(0).onkoPudonnut()) {
+                peli.vaihtoPalikka();
+            }
             peli.paivita();
         }
     }

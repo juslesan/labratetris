@@ -3,11 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package labratetris.gui;
+package labratetris.gui.peli;
 
 import java.awt.GridLayout;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import labratetris.gui.Paivitettava;
 import labratetris.peli.Peli;
 
 /**

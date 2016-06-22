@@ -1,0 +1,5 @@
+Jone:500
+Pave:400
+Pena:300
+Pate:200
+Pasi:50
