@@ -20,15 +20,15 @@ import labratetris.peli.Peli;
  * Luokan tarkoitus on näyttää mikä on kolmas seuraavista palikoista.
  */
 public class NaytaSeuraavaPalikka3 extends JPanel implements Paivitettava {
-
+    
     private Peli peli;
     private int palanSivunPituus;
-
+    
     public NaytaSeuraavaPalikka3(Peli peli, int palanSivunPituus) {
         this.peli = peli;
         this.palanSivunPituus = palanSivunPituus;
     }
-
+    
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
@@ -38,36 +38,17 @@ public class NaytaSeuraavaPalikka3 extends JPanel implements Paivitettava {
             g.fill3DRect(pala.getX() * palanSivunPituus, pala.getY() * palanSivunPituus, palanSivunPituus, palanSivunPituus, true);
         }
     }
-
+    
     @Override
     public void paivita() {
         super.removeAll();
         super.revalidate();
         super.repaint();
     }
-
+    
     private void palikanVari(Graphics g, Palikka palikka) {
-        if (palikka.getVari() == Vari.SYAANI) {
-            g.setColor(java.awt.Color.CYAN);
-        }
-        if (palikka.getVari() == Vari.KELTAINEN) {
-            g.setColor(java.awt.Color.YELLOW);
-        }
-        if (palikka.getVari() == Vari.ORANSSI) {
-            g.setColor(java.awt.Color.ORANGE);
-        }
-        if (palikka.getVari() == Vari.PUNAINEN) {
-            g.setColor(java.awt.Color.RED);
-        }
-        if (palikka.getVari() == Vari.VIHREA) {
-            g.setColor(java.awt.Color.GREEN);
-        }
-        if (palikka.getVari() == Vari.SININEN) {
-            g.setColor(java.awt.Color.BLUE);
-        }
-        if (palikka.getVari() == Vari.PURPPURA) {
-            g.setColor(java.awt.Color.MAGENTA);
-        }
+        PalojenVarit varit = new PalojenVarit();
+        varit.palikanVarit(g, palikka);
     }
-
+    
 }

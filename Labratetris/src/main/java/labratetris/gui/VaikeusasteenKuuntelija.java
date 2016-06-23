@@ -15,7 +15,7 @@ import labratetris.peli.Peli;
 /**
  *
  * @author Santeri Juslenius
- * 
+ *
  * Luokka antaa toiminnalisuuden VaikeusasteenValinta-luokan JButtoneille.
  */
 public class VaikeusasteenKuuntelija implements ActionListener {

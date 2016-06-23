@@ -68,4 +68,9 @@ public class PalaTest {
 
     }
 
+    @Test
+    public void pudonnutToimii() {
+        pala.pudonnut();
+        assertEquals(true, pala.onkoPudonnut());
+    }
 }

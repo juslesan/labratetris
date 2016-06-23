@@ -21,7 +21,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.WindowConstants;
-import labratetris.peli.Nappaimistonkuuntelija;
+import labratetris.gui.Nappaimistonkuuntelija;
 import labratetris.gui.Paivitettava;
 import labratetris.logiikka.palikat.*;
 import labratetris.peli.Peli;

@@ -11,24 +11,14 @@ import java.util.Collections;
  */
 public class Kentta {
 
-//    private ArrayList<ArrayList<Boolean>> kentta;
     private Pala[][] kentta;
     private int korkeus;
     private int leveys;
 
     public Kentta(int korkeus, int leveys) {
-//        this.kentta = new ArrayList();
-//        for (int i = 0; i < korkeus; i++) {
-//            kentta.add(new ArrayList());
-//            for (int x = 0; x < leveys; x++) {
-//                kentta.get(i).add(Boolean.FALSE);
-//            }
-//
-//        }
         this.kentta = new Pala[korkeus][leveys];
         this.korkeus = korkeus;
         this.leveys = leveys;
-
     }
 
     /**
@@ -56,6 +46,9 @@ public class Kentta {
      * @return palauttaa true jos täysi, false jos ei.
      */
     public boolean onkoRiviTaynna(int y) {
+        if (y < 0 || y > korkeus) {
+            return false;
+        }
         for (int i = 0; i < this.leveys; i++) {
             if (onkoRuudussaPala(i, y) == false) {
                 return false;
@@ -72,6 +65,9 @@ public class Kentta {
      * @param pala ruutuun lisättävä pala.
      */
     public void tayta(int x, int y, Pala pala) {
+        if (x < 0 || x > leveys || y < 0 || y > korkeus) {
+            return;
+        }
         this.kentta[y][x] = pala;
     }
 
@@ -83,9 +79,11 @@ public class Kentta {
      * @return palauttaa poistetun palan
      */
     public Pala tyhjenna(int x, int y) {
+        if (x < 0 || x > leveys || y < 0 || y > korkeus) {
+            return null;
+        }
         Pala pala = this.kentta[y][x];
         this.kentta[y][x] = null;
-
         return pala;
     }
 
@@ -95,6 +93,9 @@ public class Kentta {
      * @param y kertoo miltä riviltä tyhjennetään.
      */
     public void tyhjennaRivi(int y) {
+        if (y < 0 || y > korkeus) {
+            return;
+        }
         for (int i = 0; i < leveys; i++) {
             tyhjenna(i, y);
         }

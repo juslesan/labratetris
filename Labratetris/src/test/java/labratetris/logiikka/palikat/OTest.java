@@ -28,10 +28,19 @@ public class OTest {
         kentta = new Kentta(22, 10);
         o = new O(kentta);
     }
-    
+
     @Test
     public void KonstruktoriToimii() {
         assertEquals("(4,1)(5,1)(4,2)(5,2)", o.toString());
     }
 
+    public void OEiKaanny() {
+        o.kaanna();
+        o.kaannaAlas();
+        o.kaannaOikea();
+        o.kaannaVasen();
+        o.kaannaYlos();
+        o.kaanna();
+        assertEquals("(4,1)(5,1)(4,2)(5,2)", o.toString());
+    }
 }

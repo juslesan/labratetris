@@ -52,22 +52,22 @@ public abstract class Palikka {
     }
 
     /**
-     * Kääntää palikkaa alas.
+     * Kääntää palikkan alas.
      */
     public abstract void kaannaAlas();
 
     /**
-     * Kääntää palikkaa vasemmalle.
+     * Kääntää palikkan vasemmalle.
      */
     public abstract void kaannaVasen();
 
     /**
-     * Kääntää palikkaa ylös.
+     * Kääntää palikkan ylös.
      */
     public abstract void kaannaYlos();
 
     /**
-     * Kääntää palikkaa oikealle.
+     * Kääntää palikkan oikealle.
      */
     public abstract void kaannaOikea();
 

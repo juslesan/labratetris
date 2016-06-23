@@ -10,6 +10,8 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -34,17 +36,22 @@ public class PisteidenLukija {
      * @throws FileNotFoundException Virhe ilmoitus mikäli tiedostoa ei
      * löydetty.
      */
-    public String[] getPistetilastot() throws FileNotFoundException {
-        Scanner lukija = new Scanner(this.tiedosto);
-        String[] tilastot = new String[5];
+    public String[] getPistetilastot() {
+        try {
+            Scanner lukija = new Scanner(this.tiedosto);
+            String[] tilastot = new String[5];
 
-        for (int i = 0; i < 5; i++) {
-            String lisattava = (i + 1) + ".  ";
-            String[] osat = lukija.nextLine().split(":");
-            lisattava += osat[0] + ":   " + osat[1];
-            tilastot[i] = lisattava;
+            for (int i = 0; i < 5; i++) {
+                String lisattava = (i + 1) + ".  ";
+                String[] osat = lukija.nextLine().split(":");
+                lisattava += osat[0] + ":   " + osat[1];
+                tilastot[i] = lisattava;
+            }
+            return tilastot;
+        } catch (FileNotFoundException ex) {
+            nollaa();
+            return getPistetilastot();
         }
-        return tilastot;
     }
 
     /**
@@ -66,6 +73,7 @@ public class PisteidenLukija {
                 }
             }
         } catch (Exception error) {
+            nollaa();
             return false;
         }
         return false;
@@ -94,6 +102,7 @@ public class PisteidenLukija {
                 i++;
             }
         } catch (Exception error) {
+            nollaa();
         }
     }
 
@@ -147,7 +156,8 @@ public class PisteidenLukija {
             }
             return lista;
         } catch (FileNotFoundException error) {
-            return null;
+            nollaa();
+            return tiedostonSisalto();
         }
     }
 
@@ -156,9 +166,20 @@ public class PisteidenLukija {
      *
      * @throws IOException Virheilmoitus mikäli tiedostoa ei löydy.
      */
-    public void nollaa() throws IOException {
-        FileWriter kirjoittaja = new FileWriter(this.tiedosto);
-        kirjoittaja.write("Jone:500\nPave:400\nPena:300\nPate:200\nPasi:50");
-        kirjoittaja.close();
+    public void nollaa() {
+        FileWriter kirjoittaja = null;
+        try {
+            kirjoittaja = new FileWriter(this.tiedosto);
+            kirjoittaja.write("Jone:500\nPave:400\nPena:300\nPate:200\nPasi:50");
+            kirjoittaja.close();
+        } catch (IOException ex) {
+            Logger.getLogger(PisteidenLukija.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                kirjoittaja.close();
+            } catch (IOException ex) {
+                Logger.getLogger(PisteidenLukija.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
     }
 }

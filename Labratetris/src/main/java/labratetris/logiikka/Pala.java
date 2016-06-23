@@ -31,7 +31,6 @@ public class Pala {
 
     public int getX() {
         return x;
-
     }
 
     public int getY() {
@@ -63,6 +62,9 @@ public class Pala {
         return this.pudonnut;
     }
 
+    /**
+     * Asettaa palan this.pudonnut arvon trueksi.
+     */
     public void pudonnut() {
         this.pudonnut = true;
     }

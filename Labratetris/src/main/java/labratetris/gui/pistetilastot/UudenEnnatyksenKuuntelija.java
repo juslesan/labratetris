@@ -19,8 +19,8 @@ import labratetris.lukija.PisteidenLukija;
 /**
  *
  * @author Santeri Juslenius
- * 
- * Luokan tarkoitus on 
+ *
+ * Luokan tarkoitus on
  */
 public class UudenEnnatyksenKuuntelija implements ActionListener {
 

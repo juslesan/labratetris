@@ -49,27 +49,8 @@ public class NaytaSeuraavaPalikka2 extends JPanel implements Paivitettava {
     }
 
     private void palikanVari(Graphics g, Palikka palikka) {
-        if (palikka.getVari() == Vari.SYAANI) {
-            g.setColor(java.awt.Color.CYAN);
-        }
-        if (palikka.getVari() == Vari.KELTAINEN) {
-            g.setColor(java.awt.Color.YELLOW);
-        }
-        if (palikka.getVari() == Vari.ORANSSI) {
-            g.setColor(java.awt.Color.ORANGE);
-        }
-        if (palikka.getVari() == Vari.PUNAINEN) {
-            g.setColor(java.awt.Color.RED);
-        }
-        if (palikka.getVari() == Vari.VIHREA) {
-            g.setColor(java.awt.Color.GREEN);
-        }
-        if (palikka.getVari() == Vari.SININEN) {
-            g.setColor(java.awt.Color.BLUE);
-        }
-        if (palikka.getVari() == Vari.PURPPURA) {
-            g.setColor(java.awt.Color.MAGENTA);
-        }
+        PalojenVarit varit = new PalojenVarit();
+        varit.palikanVarit(g, palikka);
     }
 
 }

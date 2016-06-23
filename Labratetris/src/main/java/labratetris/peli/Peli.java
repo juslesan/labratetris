@@ -94,7 +94,6 @@ public class Peli extends Timer implements ActionListener {
         this.palikka.putoa();
         paivita();
         super.setDelay(1200 / vaikeus);
-
     }
 
     /**

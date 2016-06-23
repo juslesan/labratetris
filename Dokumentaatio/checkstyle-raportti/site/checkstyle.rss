@@ -25,7 +25,7 @@ under the License.
     <language>en-us</language>
     <copyright>&#169;2016</copyright>
     <item>
-      <title>File: 23,
+      <title>File: 33,
              Errors: 2,
              Warnings: 0,
              Infos: 0
@@ -46,6 +46,20 @@ under the License.
           <tbody>
                           <tr>
                 <td>
+                  <a href="${project.url}/checkstyle.html#labratetris.gui.peli.NaytaSeuraavaPalikka2.java">labratetris/gui/peli/NaytaSeuraavaPalikka2.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
                   <a href="${project.url}/checkstyle.html#labratetris.peli.Peli.java">labratetris/peli/Peli.java</a>
                 </td>
                 <td>
@@ -56,34 +70,6 @@ under the License.
                 </td>
                 <td>
                   1
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="${project.url}/checkstyle.html#labratetris.gui.Tetriskentta.java">labratetris/gui/Tetriskentta.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="${project.url}/checkstyle.html#labratetris.gui.NaytaSeuraavaPalikka1.java">labratetris/gui/NaytaSeuraavaPalikka1.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
                 </td>
               </tr>
                           <tr>
@@ -102,7 +88,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#labratetris.logiikka.palikat.Vari.java">labratetris/logiikka/palikat/Vari.java</a>
+                  <a href="${project.url}/checkstyle.html#labratetris.gui.VaikeusasteenValinta.java">labratetris/gui/VaikeusasteenValinta.java</a>
                 </td>
                 <td>
                   0
@@ -116,21 +102,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#labratetris.gui.Kayttoliittyma.java">labratetris/gui/Kayttoliittyma.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="${project.url}/checkstyle.html#labratetris.gui.Infopaneeli.java">labratetris/gui/Infopaneeli.java</a>
+                  <a href="${project.url}/checkstyle.html#labratetris.gui.pistetilastot.UusiEnnatys.java">labratetris/gui/pistetilastot/UusiEnnatys.java</a>
                 </td>
                 <td>
                   0
@@ -158,49 +130,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#labratetris.logiikka.palikat.T.java">labratetris/logiikka/palikat/T.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="${project.url}/checkstyle.html#labratetris.gui.NaytaSeuraavaPalikka3.java">labratetris/gui/NaytaSeuraavaPalikka3.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
                   <a href="${project.url}/checkstyle.html#labratetris.logiikka.palikat.O.java">labratetris/logiikka/palikat/O.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="${project.url}/checkstyle.html#labratetris.logiikka.palikat.Kulma.java">labratetris/logiikka/palikat/Kulma.java</a>
                 </td>
                 <td>
                   0
@@ -228,6 +158,216 @@ under the License.
               </tr>
                           <tr>
                 <td>
+                  <a href="${project.url}/checkstyle.html#labratetris.gui.peli.Infopaneeli.java">labratetris/gui/peli/Infopaneeli.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#labratetris.gui.pistetilastot.Pistetilastot.java">labratetris/gui/pistetilastot/Pistetilastot.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#labratetris.gui.pistetilastot.UudenEnnatyksenKuuntelija.java">labratetris/gui/pistetilastot/UudenEnnatyksenKuuntelija.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#labratetris.gui.Nappaimistonkuuntelija.java">labratetris/gui/Nappaimistonkuuntelija.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#labratetris.gui.peli.PelinKali.java">labratetris/gui/peli/PelinKali.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#labratetris.gui.ValikonKuuntelija.java">labratetris/gui/ValikonKuuntelija.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#labratetris.gui.ValikkoKali.java">labratetris/gui/ValikkoKali.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#labratetris.gui.peli.NaytaVaihtoPalikka.java">labratetris/gui/peli/NaytaVaihtoPalikka.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#labratetris.logiikka.palikat.Vari.java">labratetris/logiikka/palikat/Vari.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#labratetris.logiikka.palikat.T.java">labratetris/logiikka/palikat/T.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#labratetris.gui.peli.NaytaSeuraavaPalikka1.java">labratetris/gui/peli/NaytaSeuraavaPalikka1.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#labratetris.gui.VaikeusasteenKuuntelija.java">labratetris/gui/VaikeusasteenKuuntelija.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#labratetris.peli.Main.java">labratetris/peli/Main.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#labratetris.gui.peli.PalojenVarit.java">labratetris/gui/peli/PalojenVarit.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#labratetris.logiikka.palikat.Kulma.java">labratetris/logiikka/palikat/Kulma.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
                   <a href="${project.url}/checkstyle.html#labratetris.logiikka.palikat.S.java">labratetris/logiikka/palikat/S.java</a>
                 </td>
                 <td>
@@ -242,7 +382,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#Main.java">Main.java</a>
+                  <a href="${project.url}/checkstyle.html#labratetris.lukija.PisteidenLukija.java">labratetris/lukija/PisteidenLukija.java</a>
                 </td>
                 <td>
                   0
@@ -256,7 +396,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#labratetris.gui.NaytaSeuraavaPalikka2.java">labratetris/gui/NaytaSeuraavaPalikka2.java</a>
+                  <a href="${project.url}/checkstyle.html#labratetris.gui.peli.Tetriskentta.java">labratetris/gui/peli/Tetriskentta.java</a>
                 </td>
                 <td>
                   0
@@ -270,7 +410,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#labratetris.gui.NaytaVaihtoPalikka.java">labratetris/gui/NaytaVaihtoPalikka.java</a>
+                  <a href="${project.url}/checkstyle.html#labratetris.gui.peli.NaytaSeuraavaPalikka3.java">labratetris/gui/peli/NaytaSeuraavaPalikka3.java</a>
                 </td>
                 <td>
                   0
@@ -312,7 +452,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#labratetris.logiikka.palikat.J.java">labratetris/logiikka/palikat/J.java</a>
+                  <a href="${project.url}/checkstyle.html#labratetris.gui.pistetilastot.PistetilastotPaneelinKuuntelija.java">labratetris/gui/pistetilastot/PistetilastotPaneelinKuuntelija.java</a>
                 </td>
                 <td>
                   0
@@ -326,7 +466,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#labratetris.gui.Nappaimistonkuuntelija.java">labratetris/gui/Nappaimistonkuuntelija.java</a>
+                  <a href="${project.url}/checkstyle.html#labratetris.logiikka.palikat.J.java">labratetris/logiikka/palikat/J.java</a>
                 </td>
                 <td>
                   0
