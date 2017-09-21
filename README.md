@@ -1,6 +1,6 @@
 # labratetris
 
-##Dokumentaatio
+## Dokumentaatio
 
 [aiheen kuvaus](Dokumentaatio/aiheenKuvausJaRakenne.md)
 
